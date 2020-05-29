@@ -11,21 +11,22 @@ public class Main {
         massive[4] = "«Во, голое тело!», - вопи по воле теологов";
 
 
-        for (int k = 0; k < massive.length; k++){
-            String text = massive[k];
+        for (String s : massive) {
+            String text = s;
 //
             text = text
-                    .replaceAll("[^A-Za-z0-9_А-Яа-я]","")
+                    .replaceAll("[^A-Za-z0-9_А-Яа-я]", "")
                     .toLowerCase();
             boolean p = true;
-            for (int i = 0, j = text.length()-1; i < text.length()/2;i++, j--){
-                if(text.charAt(i) != text.charAt(j)){
+            for (int i = 0, j = text.length() - 1; i < text.length() / 2; i++, j--) {
+                if (text.charAt(i) != text.charAt(j)) {
                     p = false;
+                    break;
                 }
             }
-            if (p){
+            if (p) {
                 System.out.println(text + " true");
-            }else {
+            } else {
                 System.out.println(text + " false");
             }
         }
